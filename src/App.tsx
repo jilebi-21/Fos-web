@@ -1,15 +1,17 @@
 import { ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import TopBar from "./routes/home/TopBar";
-import { darkTheme } from "./utils/AppThemes";
+import DevicesPage from "./routes/devices/components/Downloads";
+import { darkTheme, lightTheme } from "./utils/AppThemes";
 
 export default function App() {
-	const defaultTheme = darkTheme;
+	const defaultTheme = lightTheme;
 
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<CssBaseline />
 			<TopBar />
+			<DevicesPage />
 		</ThemeProvider>
 	);
 }
