@@ -23,6 +23,11 @@ const useStyles = (theme: Theme) => {
 				width: "25%",
 			},
 		},
+
+		appBar: theme.mixins.toolbar,
+		deviceListWrapper: {
+			margin: "20px 0",
+		},
 	};
 };
 
@@ -44,15 +49,18 @@ const DevicesPage = () => {
 
 	return (
 		<Container>
-			<DeviceListContainer>
-				{devicesList.map((item, idx) => {
-					return (
-						<Grid sx={styles.gridItem} item key={idx}>
-							<DeviceCard info={item} />
-						</Grid>
-					);
-				})}
-			</DeviceListContainer>
+			<div style={styles.appBar}></div>
+			<div style={styles.deviceListWrapper}>
+				<DeviceListContainer>
+					{devicesList.map((item, idx) => {
+						return (
+							<Grid sx={styles.gridItem} item key={idx}>
+								<DeviceCard info={item} />
+							</Grid>
+						);
+					})}
+				</DeviceListContainer>
+			</div>
 		</Container>
 	);
 };
