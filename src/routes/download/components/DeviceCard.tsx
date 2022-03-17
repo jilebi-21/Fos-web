@@ -19,12 +19,17 @@ const useStyles = (theme: Theme) => {
 			width: "100%",
 			height: `calc(${imageSize} + 2 * ${theme.spacing(1)})`,
 			padding: `${theme.spacing(1)} ${theme.spacing(1.5)}`,
-			borderRadius: "6px",
-			boxShadow: "0px 0px 10px rgba(0, 0, 0, .1)",
-			backgroundColor: theme.palette.background.paper,
+			borderRadius: "12px",
+			backgroundColor: theme.palette.background.default,
 			display: "flex",
 			cursor: "pointer",
 			transition: "250ms",
+			boxShadow: `3px 3px 12px ${theme.palette.shadow.top}, -3px -3px 12px ${theme.palette.shadow.bottom}`,
+
+			"&:hover": {
+				boxShadow: `0px 0px 8px ${theme.palette.shadow.highlight}`,
+				backgroundColor: `${theme.palette.background.paper}`,
+			},
 
 			[theme.breakpoints.up("large")]: {
 				height: `calc(${boxHeight}px + 2 * ${padding})`,

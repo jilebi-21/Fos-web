@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+// import "@mui/material/styles/createPalette";
 
 declare module "@mui/material/styles" {
 	interface BreakpointOverrides {
@@ -6,6 +7,23 @@ declare module "@mui/material/styles" {
 		medium: true;
 		large: true;
 		xlarge: true;
+	}
+}
+
+declare module "@mui/material/styles" {
+	interface Palette {
+		shadow: {
+			top: string;
+			bottom: string;
+			highlight: string;
+		};
+	}
+	interface PaletteOptions {
+		shadow?: {
+			top?: string;
+			bottom?: string;
+			highlight?: string;
+		};
 	}
 }
 
@@ -30,16 +48,36 @@ export const lightTheme = createTheme({
 			default: "#f8f8f8",
 			paper: "#fff",
 		},
+		primary: {
+			main: "#4baf4b",
+		},
+		secondary: {
+			main: "#74226C",
+		},
 	},
 	breakpoints: breakpointValues(),
 });
 
-export const darkTheme = createTheme({
+export let darkTheme = createTheme({
 	...lightTheme,
 	palette: {
 		mode: "dark",
+		primary: {
+			main: "#4baf4b",
+		},
 		background: {
-			paper: "#212121",
+			default: "#181818",
+			paper: "#161616",
+		},
+	},
+});
+
+darkTheme = createTheme(darkTheme, {
+	palette: {
+		shadow: {
+			top: "#030303",
+			bottom: "#303030",
+			highlight: darkTheme.palette.primary.main,
 		},
 	},
 });
