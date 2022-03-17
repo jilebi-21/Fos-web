@@ -41,25 +41,18 @@ const breakpointValues = () => {
 	};
 };
 
-export const lightTheme = createTheme({
+export const baseTheme = createTheme({
 	palette: {
-		mode: "light",
 		background: {
 			default: "#f8f8f8",
 			paper: "#fff",
-		},
-		primary: {
-			main: "#4baf4b",
-		},
-		secondary: {
-			main: "#74226C",
 		},
 	},
 	breakpoints: breakpointValues(),
 });
 
 export let darkTheme = createTheme({
-	...lightTheme,
+	...baseTheme,
 	palette: {
 		mode: "dark",
 		primary: {
