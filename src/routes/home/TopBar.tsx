@@ -1,5 +1,4 @@
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { Theme, useTheme } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
@@ -17,7 +16,14 @@ interface TopBarProps {
 const useStyles = (theme: Theme) => {
 	return {
 		appBar: {
-			backgroundColor: theme.palette.background.default,
+			backgroundColor: `${theme.palette.background.default}`,
+		},
+
+		toolbar: {
+			margin: "0 40px 0 40px",
+			[theme.breakpoints.down("large")]: {
+				margin: 0,
+			},
 		},
 
 		navButtonIconSize: {
@@ -46,30 +52,25 @@ const TopBar = (props: TopBarProps) => {
 	];
 
 	return (
-		<Box>
-			<AppBar sx={styles.appBar} elevation={0}>
-				<Toolbar>
-					<div onClick={() => props.handleMenuClicks(MenuItems.HOME)}>
-						<AppLogo />
-					</div>
-					<Box flex={1} />
+		<AppBar sx={styles.appBar} elevation={0}>
+			<Toolbar sx={styles.toolbar}>
+				<div onClick={() => props.handleMenuClicks(MenuItems.HOME)}>
+					<AppLogo />
+				</div>
+				<div style={{ flex: "1" }} />
 
-					{menuItems.map((item, idx) => {
-						return (
-							<div
-								key={idx}
-								onClick={() => props.handleMenuClicks(item.id)}
-							>
-								<NavButton
-									title={item.title}
-									icon={item.icon}
-								/>
-							</div>
-						);
-					})}
-				</Toolbar>
-			</AppBar>
-		</Box>
+				{menuItems.map((item, idx) => {
+					return (
+						<div
+							key={idx}
+							onClick={() => props.handleMenuClicks(item.id)}
+						>
+							<NavButton title={item.title} icon={item.icon} />
+						</div>
+					);
+				})}
+			</Toolbar>
+		</AppBar>
 	);
 };
 

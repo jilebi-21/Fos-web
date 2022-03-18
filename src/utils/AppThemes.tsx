@@ -49,6 +49,11 @@ export const baseTheme = createTheme({
 		},
 	},
 	breakpoints: breakpointValues(),
+	mixins: {
+		toolbar: {
+			minHeight: "90px",
+		},
+	},
 });
 
 export let darkTheme = createTheme({

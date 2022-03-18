@@ -18,17 +18,21 @@ const useStyles = (theme: Theme) => {
 		link: {
 			display: "inline-flex",
 			alignItems: "center",
-			padding: "8px 12px",
-			borderRadius: "30px",
+			justifyContent: "center",
+			padding: "16px 12px",
+			height: "60px",
+			minWidth: "60px",
+			borderRadius: "16px",
 			cursor: "pointer",
 			textDecoration: "none",
 			transition: "250ms",
 			color: theme.palette.text.primary,
+			boxShadow: `2px 2px 8px ${theme.palette.shadow.top}, -2px -2px 8px ${theme.palette.shadow.bottom}`,
 
 			["&:hover"]: {
 				color: theme.palette.primary.main,
 				backgroundColor: theme.palette.background.paper,
-				boxShadow: `0 0 10px ${theme.palette.divider}`,
+				boxShadow: `0px 0px 10px ${theme.palette.shadow.highlight}`,
 			},
 		},
 

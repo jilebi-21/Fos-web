@@ -10,12 +10,12 @@ const useStyles = (theme: Theme) => {
 		boxStyle: {
 			cursor: "pointer",
 			transition: "300ms",
-			padding: "0px 10px",
+			borderRadius: "16px",
+			padding: "10px 20px",
 
 			"&:hover": {
 				backgroundColor: theme.palette.background.paper,
-				boxShadow: `0 0 10px ${theme.palette.divider}`,
-				borderRadius: "24.5px",
+				boxShadow: `inset 0 0 10px ${theme.palette.shadow.highlight}`,
 			},
 		},
 	};
