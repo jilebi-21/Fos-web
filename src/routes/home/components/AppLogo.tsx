@@ -1,50 +1,35 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { Theme, useTheme } from "@mui/material";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./_toolbarStyles.scss";
 import logo from "../../../icons/logo.png";
 
 const logoSize = 45;
 
-const useStyles = (theme: Theme) => {
-	return {
-		boxStyle: {
-			cursor: "pointer",
-			transition: "300ms",
-			borderRadius: "16px",
-			padding: "10px 20px",
+const styles = {
+	boxStyle: {
+		cursor: "pointer",
+		transition: "300ms",
+		borderRadius: "16px",
+		padding: "10px 20px",
+		// backgroundColor: "red",
 
-			"&:hover": {
-				backgroundColor: theme.palette.background.paper,
-				boxShadow: `inset 0 0 10px ${theme.palette.shadow.highlight}`,
-			},
+		"&:hover": {
+			// background-color: #EAEAEA;
+			boxShadow: "inset 0 0 10px #00f801",
 		},
-	};
+	},
 };
 
 const AppLogo = () => {
-	const theme = useTheme();
-	const styles = useStyles(theme);
-
 	return (
-		<Box sx={styles.boxStyle}>
-			<Typography
-				sx={{
-					color: theme.palette.primary.main,
-					alignItems: "center",
-					verticalAlign: "middle",
-					display: "inline-flex",
-					whiteSpace: "nowrap",
-				}}
-			>
-				<img
-					src={logo}
-					width={logoSize}
-					height={logoSize}
-					style={{ display: "inline-block" }}
-				/>
-				Freaky OS
-			</Typography>
-		</Box>
+		<div style={styles.boxStyle}>
+			<img
+				src={logo}
+				width={logoSize}
+				height={logoSize}
+				style={{ display: "inline-block" }}
+			/>
+			<span>Freaky OS</span>
+		</div>
 	);
 };
 

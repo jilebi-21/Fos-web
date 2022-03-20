@@ -1,16 +1,14 @@
-import { ThemeProvider } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
-import TopBar from "./routes/home/TopBar";
+import TopBar from "./routes/home/components/TopBar";
 import DevicesPage from "./routes/download/components/Downloads";
-import { darkTheme } from "./utils/AppThemes";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { MenuItems } from "./routes/home/Utils";
+import "./App.scss";
+import { Container } from "reactstrap";
 
 const homePath = "/";
 const downloadsPath = "/downloads";
 
 export default function App() {
-	const defaultTheme = darkTheme;
 	const navigate = useNavigate();
 
 	const handleMenuClicks = (item: MenuItems) => {
@@ -27,15 +25,18 @@ export default function App() {
 		}
 	};
 
+	const HomeContent = () => {
+		return <Container fluid></Container>;
+	};
+
 	return (
-		<ThemeProvider theme={defaultTheme}>
-			<CssBaseline />
+		<Container fluid style={{ padding: 0 }}>
 			<TopBar handleMenuClicks={handleMenuClicks} />
 
 			<Routes>
-				<Route path={homePath} element={<div />} />
+				<Route path={homePath} element={HomeContent()} />
 				<Route path={downloadsPath} element={<DevicesPage />} />
 			</Routes>
-		</ThemeProvider>
+		</Container>
 	);
 }

@@ -1,40 +1,13 @@
-import { Theme, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import axios from "axios";
 import DeviceCard from "./DeviceCard";
-import DeviceListContainer from "./DeviceListContainer";
+import { Col, Container, Row } from "reactstrap";
 
 const url =
 	"https://raw.githubusercontent.com/pruthvi-21/Fos-web/master/api/device-list.json";
 
-const useStyles = (theme: Theme) => {
-	return {
-		gridItem: {
-			width: "100%",
-			[theme.breakpoints.up("medium")]: {
-				width: "50%",
-			},
-			[theme.breakpoints.up("large")]: {
-				width: "33.333%",
-			},
-			[theme.breakpoints.up("xlarge")]: {
-				width: "25%",
-			},
-		},
-
-		appBar: theme.mixins.toolbar,
-		deviceListWrapper: {
-			margin: "20px 0",
-		},
-	};
-};
-
 const DevicesPage = () => {
 	const [devicesList, setDevicesList] = useState([]);
-	const theme = useTheme();
-	const styles = useStyles(theme);
 
 	const fetchAllDevices = async () => {
 		const response = await axios.get(url);
@@ -49,18 +22,22 @@ const DevicesPage = () => {
 
 	return (
 		<Container>
-			<div style={styles.appBar}></div>
-			<div style={styles.deviceListWrapper}>
-				<DeviceListContainer>
-					{devicesList.map((item, idx) => {
-						return (
-							<Grid sx={styles.gridItem} item key={idx}>
+			<Row>
+				{devicesList.map((item, idx) => {
+					return (
+						<Col
+							sm={12}
+							md={6}
+							lg={3}
+							style={{ margin: "6px 0px" }}
+						>
+							<div key={idx}>
 								<DeviceCard info={item} />
-							</Grid>
-						);
-					})}
-				</DeviceListContainer>
-			</div>
+							</div>
+						</Col>
+					);
+				})}
+			</Row>
 		</Container>
 	);
 };

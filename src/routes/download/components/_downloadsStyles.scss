@@ -1,0 +1,60 @@
+.downloads--device-card-titles-container {
+	margin: auto 12px;
+}
+
+.device-titles {
+	text-align: start;
+
+	@media screen and (min-width: 1000px) {
+		text-align: center;
+	}
+}
+
+.downloads--device-card-container {
+	width: 100%;
+	height: calc(80px + 2 * 8px);
+	padding: 8px 12px;
+	border-radius: 12px;
+	background-color: #eaeaea; // background
+	display: flex;
+	cursor: pointer;
+	transition: 250ms;
+	// boxShadow: `3px 3px 12px ${theme.palette.shadow.top}, -3px -3px 12px ${theme.palette.shadow.bottom}`,
+
+	&:hover {
+		box-shadow: 0px 0px 8px #eaeaea;
+		background-color: #212121;
+	}
+
+	@media only screen and (min-width: 1000px) {
+		height: calc(240px + 2 * 16px);
+		width: calc(200px + 2 * 16px);
+		flex-direction: column;
+		padding: padding;
+	}
+}
+
+.downloads--image-wrapper {
+	height: 80px;
+	width: 80px;
+
+	// [theme.breakpoints.up("large")]: {
+	@media screen and (min-width: 900px) {
+		height: boxWidth;
+		width: boxWidth;
+		padding: "20px";
+	}
+}
+
+.downloads--device-grid-item {
+	width: 100%;
+	@media only screen and (min-width: 730px) {
+		width: 50%;
+	}
+	@media only screen and (min-width: 730px) {
+		width: 33.333%;
+	}
+	@media only screen and (min-width: 730px) {
+		width: 25%;
+	}
+}
