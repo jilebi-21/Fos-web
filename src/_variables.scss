@@ -1,0 +1,33 @@
+$primary: #00a800;
+$primary-lighter: #58db44;
+$primary-darker: #007700;
+
+$secondary: #b70e24;
+$secondary-lighter: #f04f4d;
+$secondary-darker: #7f0000;
+
+$surface-color: #121212;
+$surface-color-variant: #212121;
+
+$dark: $surface-color;
+
+$text-color-primary: #e7ebf0;
+$text-color-secondary: #b2bac2;
+
+//disabled states
+$disabled-alpha: 0.5;
+$text-color-primary-disabled: rgba($text-color-primary, $disabled-alpha);
+$text-color-secondary-disabled: rgba($text-color-secondary, $disabled-alpha);
+
+:export {
+	colorPrimary: $primary;
+	colorPrimaryLighter: $primary-lighter;
+	colorPrimaryDarker: $primary-darker;
+	colorSecondary: $secondary;
+	colorSecondaryLighter: $secondary-lighter;
+	colorSecondaryDarker: $secondary-darker;
+	colorSurface: $surface-color;
+	colorSurfaceVariant: $surface-color-variant;
+}
+
+@import "~bootstrap/scss/bootstrap.scss";

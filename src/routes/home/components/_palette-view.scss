@@ -1,0 +1,82 @@
+@import "../../../_variables.scss";
+
+.color-container-primary {
+	height: 40px;
+	width: 300px;
+	border-radius: 8px;
+	overflow: hidden;
+
+	.pc {
+		height: 100%;
+		width: 33.33%;
+		background-color: $primary;
+		display: inline-block;
+	}
+
+	.pcl {
+		height: 100%;
+		width: 33.33%;
+		display: inline-block;
+		background-color: $primary-lighter;
+	}
+
+	.pcd {
+		height: 100%;
+		width: 33.33%;
+		display: inline-block;
+		background-color: $primary-darker;
+	}
+}
+
+.color-container-secondary {
+	height: 40px;
+	width: 300px;
+	margin-top: 20px;
+	border-radius: 8px;
+	overflow: hidden;
+
+	.sc {
+		height: 100%;
+		width: 33.33%;
+		background-color: $secondary;
+		display: inline-block;
+	}
+
+	.scl {
+		height: 100%;
+		width: 33.33%;
+		display: inline-block;
+		background-color: $secondary-lighter;
+	}
+
+	.scd {
+		height: 100%;
+		width: 33.33%;
+		display: inline-block;
+		background-color: $secondary-darker;
+	}
+}
+
+.tcp {
+	color: $text-color-primary;
+}
+
+.tcpd {
+	color: $text-color-primary-disabled;
+}
+
+.tcs {
+	color: $text-color-secondary;
+}
+
+.tcsd {
+	color: $text-color-secondary-disabled;
+}
+
+.scv {
+	width: 300px;
+	height: 40px;
+	margin-top: 20px;
+	border-radius: 8px;
+	background-color: $surface-color-variant;
+}

@@ -1,0 +1,11 @@
+@import "_variables.scss";
+
+.base-container {
+	height: 100vh;
+	background-color: $surface-color;
+	color: $text-color-primary;
+}
+
+.card {
+	background-color: $surface-color-variant;
+}
