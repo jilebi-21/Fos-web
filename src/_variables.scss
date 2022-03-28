@@ -19,6 +19,28 @@ $disabled-alpha: 0.5;
 $text-color-primary-disabled: rgba($text-color-primary, $disabled-alpha);
 $text-color-secondary-disabled: rgba($text-color-secondary, $disabled-alpha);
 
+$screen-xs: 0px;
+$screen-sm: 600px;
+$screen-md: 800px;
+$screen-lg: 1000px;
+$screen-xl: 1250px;
+$screen-xxl: 1500px;
+
+$screen-xs-max: $screen-sm - 1px;
+$screen-sm-max: $screen-md - 1px;
+$screen-md-max: $screen-lg - 1px;
+$screen-lg-max: $screen-xl - 1px;
+$screen-xl-max: $screen-xxl - 1px;
+
+$grid-breakpoints: (
+	xs: $screen-xs,
+	sm: $screen-sm,
+	md: $screen-md,
+	lg: $screen-lg,
+	xl: $screen-xl,
+	xxl: $screen-xxl,
+);
+
 :export {
 	colorPrimary: $primary;
 	colorPrimaryLighter: $primary-lighter;
@@ -31,6 +53,18 @@ $text-color-secondary-disabled: rgba($text-color-secondary, $disabled-alpha);
 
 	textColorPrimary: $text-color-primary;
 	textColorSecondary: $text-color-secondary;
+
+	xs: $screen-xs;
+	xsMax: $screen-xs-max;
+	sm: $screen-sm;
+	smMax: $screen-sm-max;
+	md: $screen-md;
+	mdMax: $screen-md-max;
+	lg: $screen-lg;
+	lgMax: $screen-lg-max;
+	xl: $screen-xl;
+	xlMax: $screen-xl-max;
+	xxl: $screen-xxl;
 }
 
 @import "~bootstrap/scss/bootstrap.scss";

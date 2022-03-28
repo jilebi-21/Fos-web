@@ -1,3 +1,4 @@
+import vars from "../../../_variables.scss";
 import NavButton from "./NavButton";
 import AppLogo from "./AppLogo";
 import styled from "styled-components";
@@ -12,7 +13,7 @@ const AppBar = styled.div`
 	padding: 10px 20px;
 	align-items: center;
 
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: ${vars.xsMax}) {
 		padding: 10px;
 	}
 `;

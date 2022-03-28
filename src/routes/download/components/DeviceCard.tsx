@@ -25,7 +25,7 @@ const DeviceCardContainer = styled.div`
 			-3px -3px 12px ${vars.colorPrimary};
 	}
 
-	@media screen and (min-width: 1000px) {
+	@media screen and (min-width: ${vars.lg}) {
 		height: calc(240px + 2 * 16px);
 		width: calc(200px + 2 * 16px);
 		flex-direction: column;
@@ -36,7 +36,7 @@ const DeviceImageWrapper = styled.div`
 	height: 80px;
 	width: 80px;
 
-	@media screen and (min-width: 900px) {
+	@media screen and (min-width: ${vars.lg}) {
 		height: 170px;
 		width: 170px;
 		padding: "20px";
@@ -51,7 +51,7 @@ const DeviceTitle = styled.p`
 	text-align: start;
 	margin: 0;
 
-	@media screen and (min-width: 1000px) {
+	@media screen and (min-width: ${vars.lg}) {
 		text-align: center;
 	}
 `;

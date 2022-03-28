@@ -26,7 +26,7 @@ const Link = styled.a`
 
 const NavButton = (props: NavButtonProps) => {
 	const isSmallScreen = useMediaQuery({
-		query: "(max-width: 600px)",
+		query: `(max-width: ${vars.sm})`,
 	});
 
 	return (
