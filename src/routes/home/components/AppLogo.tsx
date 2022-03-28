@@ -1,35 +1,30 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./_toolbarStyles.scss";
 import logo from "../../../icons/logo.png";
+import styled from "styled-components";
+import vars from "../../../_variables.scss";
 
-const logoSize = 45;
+const AppIconContainer = styled.div`
+	cursor: pointer;
+	transition: 300ms;
+	border-radius: 16px;
+	padding: 10px 20px;
 
-const styles = {
-	boxStyle: {
-		cursor: "pointer",
-		transition: "300ms",
-		borderRadius: "16px",
-		padding: "10px 20px",
-		// backgroundColor: "red",
+	&:hover {
+		box-shadow: inset 0 0 10px ${vars.colorPrimary};
+	}
+`;
 
-		"&:hover": {
-			// background-color: #EAEAEA;
-			boxShadow: "inset 0 0 10px #00f801",
-		},
-	},
-};
+const AppIcon = styled.img`
+	width: 45px;
+	height: 45px;
+	display: inline-block;
+`;
 
 const AppLogo = () => {
 	return (
-		<div style={styles.boxStyle}>
-			<img
-				src={logo}
-				width={logoSize}
-				height={logoSize}
-				style={{ display: "inline-block" }}
-			/>
+		<AppIconContainer>
+			<AppIcon src={logo} />
 			<span>Freaky OS</span>
-		</div>
+		</AppIconContainer>
 	);
 };
 

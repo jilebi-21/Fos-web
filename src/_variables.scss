@@ -28,6 +28,9 @@ $text-color-secondary-disabled: rgba($text-color-secondary, $disabled-alpha);
 	colorSecondaryDarker: $secondary-darker;
 	colorSurface: $surface-color;
 	colorSurfaceVariant: $surface-color-variant;
+
+	textColorPrimary: $text-color-primary;
+	textColorSecondary: $text-color-secondary;
 }
 
 @import "~bootstrap/scss/bootstrap.scss";

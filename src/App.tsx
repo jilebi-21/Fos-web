@@ -1,11 +1,11 @@
-import TopBar from "./routes/home/components/TopBar";
-import DevicesPage from "./routes/download/components/Downloads";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { MenuItems } from "./routes/home/Utils";
 import "./_default-styles.scss";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { Container } from "reactstrap";
+import { MenuItems } from "./routes/home/MenuUtils";
 import { FreakyThemeProvider } from "./Utils";
+import TopBar from "./routes/home/components/TopBar";
 import HomeContent from "./routes/home/components/PaletteView";
+import DevicesPage from "./routes/download/components/Downloads";
 
 const homePath = "/";
 const downloadsPath = "/downloads";
